@@ -1,152 +1,174 @@
 {
   "configuracion": {
-    "reiniciar_puntero_al_inicio": "no",
-    "reiniciar_puntero_antes_de_cada_click": "si",
-    "delay_entre_pasos_ms": 150
+    "reiniciar_puntero_al_inicio": "si",
+    "reiniciar_puntero_antes_de_cada_click": "no",
+    "delay_entre_pasos_ms": 300
   },
   "secciones": [
     {
-      "descripcion": "Enable e-pedal",
-      "activo": "si",
+      "descripcion": "Infotainment boot delay AU",
+      "activo": "no",
+      "pasos": [{ "tipo": "esperar", "segundos": 40, "nota": "Infotainment boot delay" }]
+    },
+    {
+      "descripcion": "Escape out of Apple CarPlay / Android Auto",
+      "activo": "no",
+      "pasos": [{ "tipo": "ir_a_home", "veces": 1 }]
+    },
+    {
+      "descripcion": "Turn on-off Emergency Lane Keeping AU",
+      "activo": "no",
       "pasos": [
-        { "tipo": "esperar", "segundos": 120 },
-        { "tipo": "ir_a_home", "veces": 1 },        
-        
-        { "tipo": "click", "dx": 50, "dy": 150, "nota": "Open second menu"},
-
-        { "tipo": "click", "dx": 300, "dy": 280, "nota": "Open Settings" },        
-        { "tipo": "scroll", "direccion": "abajo", "ticks": 800 },
-
-        { "tipo": "click", "dx": 150, "dy": 150 },
-        { "tipo": "scroll", "direccion": "arriba", "ticks": 800 },
-
-        { "tipo": "click", "dx": 150, "dy": 170 },        
-        { "tipo": "scroll", "direccion": "abajo", "ticks": 800 },
-
-        { "tipo": "click", "dx": 440, "dy": 250, "nota": "Enable e-pedal" }
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications" },
+        { "tipo": "click", "dx": -1130, "dy": 320, "nota": "Click on Vehicle Settings icon" },
+        { "tipo": "click", "dx": 915, "dy": -340, "nota": "Click on Settings List" },
+        { "tipo": "scroll", "direccion": "arriba", "ticks": 800, "nota": "Scroll up to bottom of Settings List" },
+        { "tipo": "click", "dx": 0, "dy": 325, "nota": "Click on Intelligent Driving" },
+        { "tipo": "click", "dx": -640, "dy": -350, "nota": "Click on Lane Assist tab" },
+        { "tipo": "click", "dx": 360, "dy": 390, "nota": "Click on Emergency Lane Keeping toggle" },
+        { "tipo": "click", "dx": 495, "dy": -465, "nota": "Click on Home button (1850,88)" },
+        { "tipo": "mover", "dx": -1850, "dy": -88, "nota": "Return to 0,0 (ended at Zero 1850,88)" }
       ]
     },
     {
-      "descripcion": "Enable eco+",
+      "descripcion": "Turn on-off Driver Monitoring System AU",
       "activo": "no",
       "pasos": [
-        { "tipo": "esperar", "segundos": 10 },
-        { "tipo": "ir_a_home", "veces": 1 },        
-        
-        { "tipo": "click", "dx": 50, "dy": 150, "nota": "Open second menu"},
-
-        { "tipo": "click", "dx": 300, "dy": 280, "nota": "Open Settings" },        
-        { "tipo": "scroll", "direccion": "abajo", "ticks": 800 },
-
-        { "tipo": "click", "dx": 150, "dy": 150 },
-        { "tipo": "scroll", "direccion": "arriba", "ticks": 800 },
-
-        { "tipo": "click", "dx": 150, "dy": 170 },        
-        { "tipo": "scroll", "direccion": "abajo", "ticks": 800 },
-
-        { "tipo": "click", "dx": 440, "dy": 210 ,"nota": "Enable eco+"}
-       
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications" },
+        { "tipo": "click", "dx": -1130, "dy": 320, "nota": "Click on Vehicle Settings icon" },
+        { "tipo": "click", "dx": 915, "dy": -340, "nota": "Click on Settings List" },
+        { "tipo": "scroll", "direccion": "abajo", "ticks": 800, "nota": "Scroll down to top of Settings List" },
+        { "tipo": "click", "dx": 0, "dy": 130, "nota": "Click on In-Car" },
+        { "tipo": "click", "dx": -1000, "dy": -150, "nota": "Click on In-Cabin Monitoring tab" },
+        { "tipo": "click", "dx": 736, "dy": 100, "nota": "Click on Driver Monitoring System toggle" },
+        { "tipo": "esperar", "segundos": 4, "nota": "Wait for prompt timeout" },
+        { "tipo": "click", "dx": -280, "dy": 290, "nota": "Click on DMS Confirm prompt" },
+        { "tipo": "click", "dx": 759, "dy": -470, "nota": "Click on Home (1850,88)" },
+        { "tipo": "mover", "dx": -1850, "dy": -88, "nota": "Return to 0,0 (ended at Home 1850,88)" }
       ]
     },
     {
-      "descripcion": "Disable emergency lane keeping",
-      "activo": "si",
+      "descripcion": "Driver Seat Position 1 AU",
+      "activo": "no",
       "pasos": [
-        { "tipo": "esperar", "segundos": 5 },
-        { "tipo": "ir_a_home", "veces": 1 },        
-        
-        { "tipo": "click", "dx": 50, "dy": 150, "nota": "Open second menu"},
-
-        { "tipo": "click", "dx": 300, "dy": 280, "nota": "Open Settings" },        
-        { "tipo": "scroll", "direccion": "abajo", "ticks": 800 },
-
-        { "tipo": "click", "dx": 150, "dy": 150 },
-        { "tipo": "scroll", "direccion": "arriba", "ticks": 800 },
-
-        { "tipo": "click", "dx": 150, "dy": 250 },
-        { "tipo": "scroll", "direccion": "abajo", "ticks": 800 },
-
-        { "tipo": "click", "dx": 300, "dy": 135 ,"nota": "Click Forward Assist System tab"},
-        { "tipo": "click", "dx": 565, "dy": 135 ,"nota": "Click Lane Assist tab"},
-        { "tipo": "click", "dx": 440, "dy": 265 ,"nota": "Click emergency lane keeping"}
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications" },
+        { "tipo": "click", "dx": -1130, "dy": 320, "nota": "Click on Vehicle Settings icon" },
+        { "tipo": "click", "dx": 915, "dy": -340, "nota": "Click on Settings List" },
+        { "tipo": "scroll", "direccion": "abajo", "ticks": 800, "nota": "Scroll down to top of Settings List" },
+        { "tipo": "click", "dx": 0, "dy": 130, "nota": "Click on In-Car" },
+        { "tipo": "click", "dx": -360, "dy": -150, "nota": "Click on Driver Seat tab" },
+        { "tipo": "click", "dx": -380, "dy": 500, "nota": "Click on Position 1 button" },
+        { "tipo": "click", "dx": 955, "dy": -580, "nota": "Click on Home (1850,88) from Position 1 (895,668)" },
+        { "tipo": "mover", "dx": -1850, "dy": -88, "nota": "Return to 0,0" }
       ]
     },
     {
-      "descripcion": "Enable driver massage low",
-      "activo": "si",
-      "pasos": [
-        { "tipo": "esperar", "segundos": 8 },
-        { "tipo": "ir_a_home", "veces": 1 },
-        { "tipo": "esperar", "segundos": 1 },
-        { "tipo": "click", "dx": 50, "dy": 260, "nota": "Open climate" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 155, "dy": 245, "nota": "Open seats" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 310, "dy": 285, "nota": "Driver massage - Low" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 50, "dy": 260, "nota": "Exit climate" }
-      ]
-    },
-        {
-      "descripcion": "Enable driver massage High",
+      "descripcion": "Driver Seat Position 2 AU",
       "activo": "no",
       "pasos": [
-        
-        { "tipo": "esperar", "segundos": 15 },
-        { "tipo": "ir_a_home", "veces": 1 },
-        { "tipo": "esperar", "segundos": 1 },
-        { "tipo": "click", "dx": 50, "dy": 260, "nota": "Open climate" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 155, "dy": 245, "nota": "Open seats" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 400, "dy": 285, "nota": "Driver massage - High" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 50, "dy": 260, "nota": "Exit climate" }
-      ]
-    },
-        {
-      "descripcion": "Enable passenger massage high",
-      "activo": "no",
-      "pasos": [
-        { "tipo": "esperar", "segundos": 8 },
-        { "tipo": "ir_a_home", "veces": 1 },
-        { "tipo": "esperar", "segundos": 1 },
-        { "tipo": "click", "dx": 50, "dy": 260, "nota": "Open climate" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 155, "dy": 245, "nota": "Open seats" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 500, "dy": 285, "nota": "Passenger massage - High" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 50, "dy": 260, "nota": "Exit climate" }
-      ]
-    },
-        {
-      "descripcion": "Enable passenger massage low",
-      "activo": "no",
-      "pasos": [
-        
-        { "tipo": "esperar", "segundos": 15 },
-        { "tipo": "ir_a_home", "veces": 1 },
-        { "tipo": "esperar", "segundos": 1 },
-        { "tipo": "click", "dx": 50, "dy": 260, "nota": "Open climate" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 155, "dy": 245, "nota": "Open seats" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 560, "dy": 285, "nota": "Passenger massage - low" },
-        { "tipo": "esperar", "segundos": 2 },
-        { "tipo": "click", "dx": 50, "dy": 260, "nota": "Exit climate" }
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications" },
+        { "tipo": "click", "dx": -1130, "dy": 320, "nota": "Click on Vehicle Settings icon" },
+        { "tipo": "click", "dx": 915, "dy": -340, "nota": "Click on Settings List" },
+        { "tipo": "scroll", "direccion": "abajo", "ticks": 800, "nota": "Scroll down to top of Settings List" },
+        { "tipo": "click", "dx": 0, "dy": 130, "nota": "Click on In-Car" },
+        { "tipo": "click", "dx": -360, "dy": -150, "nota": "Click on Driver Seat tab" },
+        { "tipo": "click", "dx": -175, "dy": 500, "nota": "Click on Position 2 button" },
+        { "tipo": "click", "dx": 750, "dy": -580, "nota": "Click on Home (1850,88) from Position 2 (1100,668)" }
+        { "tipo": "mover", "dx": -1850, "dy": -88, "nota": "Return to 0,0" }
       ]
     },
     {
-      "descripcion": "Return to Android Auto - Apple CarPlay",
+      "descripcion": "Driver Seat Position 3 AU",
+      "activo": "no",
+      "pasos": [
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications" },
+        { "tipo": "click", "dx": -1130, "dy": 320, "nota": "Click on Vehicle Settings icon" },
+        { "tipo": "click", "dx": 915, "dy": -340, "nota": "Click on Settings List" },
+        { "tipo": "scroll", "direccion": "abajo", "ticks": 800, "nota": "Scroll down to top of Settings List" },
+        { "tipo": "click", "dx": 0, "dy": 130, "nota": "Click on In-Car" },
+        { "tipo": "click", "dx": -360, "dy": -150, "nota": "Click on Driver Seat tab" },
+        { "tipo": "click", "dx": 25, "dy": 500, "nota": "Click on Position 3 button" },
+        { "tipo": "click", "dx": 550, "dy": -580, "nota": "Click on Home (1850,88) from Position 3 (1300,668)" },
+        { "tipo": "mover", "dx": -1850, "dy": -88, "nota": "Return to 0,0" }
+      ]
+    },
+    {
+      "descripcion": "Turn on-off ECO+ AU",
+      "activo": "no",
+      "pasos": [
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications" },
+        { "tipo": "click", "dx": -1130, "dy": 320, "nota": "Click on Vehicle Settings icon" },
+        { "tipo": "click", "dx": 915, "dy": -340, "nota": "Click on Settings List" },
+        { "tipo": "scroll", "direccion": "abajo", "ticks": 800, "nota": "Scroll down to top of Settings List" },
+        { "tipo": "click", "dx": 0, "dy": 440, "nota": "Click on Driving" },
+        { "tipo": "click", "dx": -280, "dy": -240, "nota": "Click on ECO+ toggle" },
+        { "tipo": "click", "dx": 495, "dy": -300, "nota": "Click on Home button" },
+        { "tipo": "click", "dx": -1850, "dy": -88, "nota": "Return to 0,0" }
+      ]
+    },
+    {
+      "descripcion": "Turn on-off Single Pedal Mode AU",
+      "activo": "no",
+      "pasos": [
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications" },
+        { "tipo": "click", "dx": -1130, "dy": 320, "nota": "Click on Vehicle Settings icon" },
+        { "tipo": "click", "dx": 915, "dy": -340, "nota": "Click on Settings List" },
+        { "tipo": "scroll", "direccion": "abajo", "ticks": 800, "nota": "Scroll down to top of Settings List" },
+        { "tipo": "click", "dx": 0, "dy": 440, "nota": "Click on Driving" },
+        { "tipo": "click", "dx": -280, "dy": -120, "nota": "Click on Single Pedal Mode toggle" },
+        { "tipo": "click", "dx": 495, "dy": -420, "nota": "Click on Home (1850,88) and click, from Single Pedal Mode toggle (1355,508)" },
+        { "tipo": "click", "dx": -1850, "dy": -88, "nota": "Return to 0,0" }
+      ]
+    },
+    {
+      "descripcion": "Start Apple CarPlay",
+      "activo": "no",
+      "pasos": [
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications" },
+        { "tipo": "click", "dx": -350, "dy": 320, "nota": "Click on Apple CarPlay icon" },
+        { "tipo": "mover", "dx": -1500, "dy": -528, "nota": "Return to 0,0 (ended at CarPlay icon 1500,528)" }
+      ]
+    },
+    {
+      "descripcion": "Chained: ELK off + DMS off + Seat Position 1 AU",
       "activo": "si",
       "pasos": [
-        { "tipo": "esperar", "segundos": 1 },
-        { "tipo": "ir_a_home", "veces": 1 },
-        { "tipo": "click", "dx": 50, "dy": 310, "nota": "Open Android Auto or Apple CarPlay"}
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications (1850,208)" },
+        { "tipo": "click", "dx": -1130, "dy": 320, "nota": "Click on Vehicle Settings icon (720,528)" },
+        { "tipo": "click", "dx": 915, "dy": -340, "nota": "Click on Settings List (1635,188)" },
+        { "tipo": "scroll", "direccion": "arriba", "ticks": 800, "nota": "Scroll to bottom of Settings List" },
+        { "tipo": "click", "dx": 0, "dy": 325, "nota": "Click on Intelligent Driving (1635,513)" },
+        { "tipo": "click", "dx": -640, "dy": -350, "nota": "Click on Lane Assist tab (995,163)" },
+        { "tipo": "click", "dx": 360, "dy": 390, "nota": "Click on Emergency Lane Keeping toggle (1355,553)" },
+        { "tipo": "click", "dx": 280, "dy": -365, "nota": "Click on Settings List (1635,188)" },
+        { "tipo": "scroll", "direccion": "abajo", "ticks": 800, "nota": "Scroll back to top of Settings List" },
+        { "tipo": "click", "dx": 0, "dy": 130, "nota": "Click on In-Car (1635,318)" },
+        { "tipo": "click", "dx": -1000, "dy": -150, "nota": "Click on In-Cabin Monitoring tab (635,168)" },
+        { "tipo": "click", "dx": 736, "dy": 100, "nota": "Click on Driver Monitoring System toggle (1371,268)" },
+        { "tipo": "esperar", "segundos": 4, "nota": "Wait for prompt timeout" },
+        { "tipo": "click", "dx": -280, "dy": 290, "nota": "Click on DMS Confirm prompt (1091,558)" },
+        { "tipo": "click", "dx": 184, "dy": -390, "nota": "Click on Driver Seat tab (1275,168)" },
+        { "tipo": "click", "dx": -380, "dy": 500, "nota": "Click on Seat Position 1 button (895,668)" },
+        { "tipo": "click", "dx": 955, "dy": -580, "nota": "Click on Home button (1850,88)" },
+        { "tipo": "click", "dx": -1850, "dy": -88, "nota": "Return to 0,0" }
+      ]
+    },
+    {
+      "descripcion": "Location test AU",
+      "activo": "no",
+      "pasos": [
+        { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
+        { "tipo": "mover", "dx": 1850, "dy": 88, "nota": "test to home" }
       ]
     }
   ]
 }
-
-
