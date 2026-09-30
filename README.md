@@ -1,6 +1,8 @@
-* Guide created with chatgpt
+__2026-09-30__: Updated code.py and macro.json, now stops mouse acceleration from interfering and is now accurate.
 
+There's now a "mover" type which will just move the mouse cursor, but not click.
 
+---
 # 🚗 Car Settings Automation with Raspberry Pi Pico RP2040-Zero
 
 > **ES:** Automatización de configuraciones de un sistema multimedia de vehículo mediante emulación USB HID (mouse + teclado).  
@@ -440,6 +442,14 @@ Es útil cuando varias acciones consecutivas forman parte de una misma intenció
 ```
 
 Realiza scroll mediante la rueda virtual del mouse.
+
+## 11.6 `mover`
+
+```json
+{ "tipo": "mover", "dx": 300, "dy": 280, "nota": "Move to Settings" }
+```
+
+Mueve el cursor del ratón a las coordenadas indicadas.
 
 ### Campos
 
@@ -1034,6 +1044,14 @@ It is useful when several consecutive actions belong to the same logical intent.
 ```
 
 Performs scrolling through the virtual mouse wheel.
+
+## 11.6 `mover`
+
+```json
+{ "tipo": "mover", "dx": 300, "dy": 280, "nota": "Move to Settings" }
+```
+
+Moves the mouse cursor to the co-ordinates given.
 
 ### Fields
 
