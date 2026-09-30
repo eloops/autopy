@@ -4,6 +4,41 @@ There's now a "mover" type which will just move the mouse cursor, but not click.
 
 Accidentally forked from the wrong repo, afaik https://github.com/dreamsder/autopy is the OG.
 
+I've updated this now so it can be much more generally defined. Use the ui_map.json to define the menu structure of the infotainment system, along with the targets (buttons) to be clicked via their co-ordinates. You can then create a much simpler macro.json like the below:
+
+See the [ui_map.json documentation](ui_map_documentation.md) for details on how to configure it.
+
+```json
+{
+  "config": {
+    "reset_pointer_at_start": true,
+    "delay_between_steps_ms": 200
+  },
+  "sections": [
+    {
+      "description": "Boot delay",
+      "active": true,
+      "steps": [
+        { "type": "wait", "seconds": 45 }
+      ]
+    },
+    {
+      "description": "Startup settings",
+      "active": true,
+      "steps": [
+        { "type": "wait", "seconds": 5, "note": "pause before starting" },
+        { "type": "go", "target": "elk_toggle" },
+        { "type": "go", "target": "dms_toggle" },
+        { "type": "go", "target": "dms_confirm" },
+        { "type": "go", "target": "seat_pos_1" },
+        { "type": "go", "target": "home" },
+        { "type": "zero" }
+      ]
+    }
+  ]
+}
+```
+
 ---
 # 🚗 Car Settings Automation with Raspberry Pi Pico RP2040-Zero
 
