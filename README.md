@@ -2,6 +2,8 @@ __2026-09-30__: Updated code.py and macro.json, now stops mouse acceleration fro
 
 There's now a "mover" type which will just move the mouse cursor, but not click.
 
+Accidentally forked from the wrong repo, afaik https://github.com/dreamsder/autopy is the OG.
+
 ---
 # 🚗 Car Settings Automation with Raspberry Pi Pico RP2040-Zero
 
