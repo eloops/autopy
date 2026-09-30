@@ -139,7 +139,7 @@
     },
     {
       "descripcion": "Chained: ELK off + DMS off + Seat Position 1 AU",
-      "activo": "si",
+      "activo": "no",
       "pasos": [
         { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
         { "tipo": "click", "dx": 1850, "dy": 208, "nota": "Click on Applications (1850,208)" },
@@ -168,6 +168,19 @@
       "pasos": [
         { "tipo": "esperar", "segundos": 5, "nota": "Delay before start" },
         { "tipo": "mover", "dx": 1850, "dy": 88, "nota": "test to home" }
+      ]
+    },
+    {
+      "description": "Startup settings",
+      "active": true,
+      "steps": [
+        { "type": "wait", "seconds": 5, "note": "pause before starting" },
+        { "type": "go", "target": "elk_toggle" },
+        { "type": "go", "target": "dms_toggle" },
+        { "type": "go", "target": "dms_confirm" },
+        { "type": "go", "target": "seat_pos_1" },
+        { "type": "go", "target": "home" },
+        { "type": "zero" }
       ]
     }
   ]
