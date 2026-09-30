@@ -1,6 +1,6 @@
 # UI Map Documentation (`ui_map.json`)
 
-This was generated with an LLM (Kagi Quick). All the updates to code.py and ui_map.json were written with help from same.
+This was generated with an LLM (Kagi Quick). All the updates to `code.py` and `ui_map.json` were written with help from same.
 
 **!! THIS SHOULD ONLY BE DONE WHILE THE VEHICLE IS STOPPED WITH THE PARK BRAKE ENGAGED !!**
 
@@ -207,7 +207,7 @@ travels for a known number of mouse units — then divide.
 - Your screen resolution divided by `units_per_mm` should roughly equal the
   physical dots-per-mm of the display — a sanity check if you know the screen's
   physical dimensions.
-  - e.g. 1920x720 screen is 240 x 90mm phyiscally
+  - e.g. 1920 x 720 screen is 240 x 90mm physically, when the dots/mm is 8mm.
 
 ---
 
