@@ -190,10 +190,6 @@ travels for a known number of mouse units — then divide.
 - Use a large move (1000+ units) — measurement error matters less
   proportionally.
 - Do it 2–3 times and average.
-- Make sure the move is done as **one chunk** for the measurement (temporarily
-  raise `max_chunk_units` above the test distance, e.g. 2000), so you're
-  measuring pure 1:1 travel with no pauses involved. Restore the value
-  afterwards.
 - Your screen resolution divided by `units_per_mm` should roughly equal the
   physical dots-per-mm of the display — a sanity check if you know the screen's
   physical dimensions.
