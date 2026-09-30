@@ -2,6 +2,20 @@
 
 This was generated with an LLM (Kagi Quick). All the updates to code.py and ui_map.json were written with help from same.
 
+**!! THIS SHOULD ONLY BE DONE WHILE THE VEHICLE IS STOPPED WITH THE PARK BRAKE ENGAGED !!**
+
+For this to be used regularly you will need to test this many, many times to ensure its correct - think upwards of **50 times or more** across different scenarios:
+
+* Cold boot (infotainment and car off for some time)
+* Warm boot (infotainment only off for ~ 1-2 minutes)
+* With car in reverse (reverse camera engaged on screen)
+* When CarPlay / Android Auto is on
+* Anything else that interacts with the screen before this can complete
+
+Make sure you clearly understand what is going to happen when this runs! 
+
+**This is not a drop-in fix and it will take time and patience to configure.**
+
 ---
 
 ## 1. Global options (top of the file)
@@ -193,6 +207,7 @@ travels for a known number of mouse units — then divide.
 - Your screen resolution divided by `units_per_mm` should roughly equal the
   physical dots-per-mm of the display — a sanity check if you know the screen's
   physical dimensions.
+  - e.g. 1920x720 screen is 240 x 90mm phyiscally
 
 ---
 
