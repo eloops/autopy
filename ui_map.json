@@ -1,0 +1,102 @@
+{
+  "screen": { "width": 1920, "height": 720 },
+  "units_per_mm": 8,
+
+  "movement": {
+    "max_chunk_units": 100,
+    "chunk_pause_ms": 50,
+    "settle_ms": 200,
+    "screen_load_ms": 600
+  },
+
+  "scroll": { "ticks": 800, "settle_ms": 500 },
+
+  "screens": {
+    "main": {
+      "targets": {
+        "home":         { "x": 1850, "y": 88 },
+        "applications": { "x": 1850, "y": 208 }
+      }
+    },
+
+    "applications": {
+      "enter": { "target": "applications", "parent": "main" },
+      "targets": {
+        "vehicle_settings": { "x": 720,  "y": 528 },
+        "carplay":          { "x": 1500, "y": 528, "terminal": true }
+      }
+    },
+
+    "vehicle_settings": {
+      "enter": { "target": "vehicle_settings", "parent": "applications" },
+      "targets": {
+        "settings_list": { "x": 1635, "y": 188 }
+      }
+    },
+
+    "settings_list": {
+      "enter": { "target": "settings_list", "parent": "vehicle_settings" },
+      "scrollable": true,
+      "views": {
+        "bottom": {
+          "targets": {
+            "intelligent_driving": { "x": 1635, "y": 513 }
+          }
+        },
+        "top": {
+          "targets": {
+            "in_car":  { "x": 1635, "y": 318 },
+            "driving": { "x": 1635, "y": 628 }
+          }
+        }
+      }
+    },
+
+    "intelligent_driving": {
+      "enter": { "target": "intelligent_driving", "parent": "settings_list", "parent_view": "bottom" },
+      "targets": {
+        "lane_assist": { "x": 995, "y": 163 }
+      }
+    },
+
+    "lane_assist": {
+      "enter": { "target": "lane_assist", "parent": "intelligent_driving" },
+      "targets": {
+        "elk_toggle": { "x": 1355, "y": 553 }
+      }
+    },
+
+    "in_car": {
+      "enter": { "target": "in_car", "parent": "settings_list", "parent_view": "top" },
+      "targets": {
+        "cabin_tab":       { "x": 635,  "y": 168, "sets_view": "cabin" },
+        "driver_seat_tab": { "x": 1275, "y": 168, "sets_view": "driver_seat" }
+      },
+      "views": {
+        "cabin": {
+          "switch": "cabin_tab",
+          "targets": {
+            "dms_toggle":  { "x": 1371, "y": 268 },
+            "dms_confirm": { "x": 1091, "y": 558, "wait_before": 4 }
+          }
+        },
+        "driver_seat": {
+          "switch": "driver_seat_tab",
+          "targets": {
+            "seat_pos_1": { "x": 895,  "y": 668 },
+            "seat_pos_2": { "x": 1100, "y": 668 },
+            "seat_pos_3": { "x": 1300, "y": 668 }
+          }
+        }
+      }
+    },
+
+    "driving": {
+      "enter": { "target": "driving", "parent": "settings_list", "parent_view": "top" },
+      "targets": {
+        "eco_toggle":   { "x": 1355, "y": 388 },
+        "single_pedal": { "x": 1355, "y": 508 }
+      }
+    }
+  }
+}
