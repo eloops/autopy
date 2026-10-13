@@ -6,7 +6,9 @@ Changes:
   * settle_ms to `300`
   * screen_load_ms to `800`
   * delay_between_steps_ms to `300`
+
   This is a good trade-off between speed and accuracy. After plenty of tests this is working well.
+  
 * Added many new targets:
   * `ac_control` - A/C control screen
   * `bt_mobile` - Brings up the BT connection menu
@@ -37,6 +39,8 @@ I've also tested various scenarios thoroughly.
   * The macro only runs on initial boot of the system
   * Warm boot means the system hasn't really turned off, so it doesn't run again
   * Solution so far has been to remove and reinsert the USB cable connected to the rp2040.
+* Screen on, car off (brake pedal / on button not pressed)
+  * some functions are not available to be deactivated as the car is not on.
 
 There's probably some more scenarios but this is working really well now.
 
