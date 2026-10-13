@@ -5,8 +5,8 @@
   "movement": {
     "max_chunk_units": 100,
     "chunk_pause_ms": 50,
-    "settle_ms": 200,
-    "screen_load_ms": 600
+    "settle_ms": 300,
+    "screen_load_ms": 800
   },
 
   "scroll": { "ticks": 800, "settle_ms": 500 },
@@ -15,7 +15,9 @@
     "main": {
       "targets": {
         "home":         { "x": 1850, "y": 88 },
-        "applications": { "x": 1850, "y": 208 }
+        "applications": { "x": 1850, "y": 208 },
+        "ac_control":   { "x": 1850, "y": 512 },
+        "bt_mobile":    { "x": 1850, "y": 632 }
       }
     },
 
@@ -96,6 +98,85 @@
       "targets": {
         "eco_toggle":   { "x": 1355, "y": 388 },
         "single_pedal": { "x": 1355, "y": 508 }
+      }
+    },
+    
+    "ac_control": {
+      "enter": { "target": "ac_control", "parent": "main" },
+      "views": {
+        "seat": {
+          "targets": {
+            "ac_seat": { "x": 1660, "y": 450 }
+          },
+        },
+        "front": {
+          "targets": {
+            "ac_front": { "x": 1660, "y": 340 }
+          }
+        }
+      }
+    },
+    
+    "ac_front": {
+      "enter": { "target": "ac_front", "parent": "ac_control", "parent_view": "front" },
+      "targets": {
+        "ac_front_defrost": { "x": 350, "y": 640 },
+        "ac_rear_defrost":  { "x": 490, "y": 640 },
+        "ac_seat_pass":     { "x": 640, "y": 640 },
+        "ac_down":          { "x": 700, "y": 640 },
+        "ac_up":            { "x": 1080, "y": 640 },
+        "ac_seat_driv":     { "x": 1140, "y": 640 },
+        "ac_recycle":       { "x": 1290, "y": 640 }
+      }
+    },
+    
+    "ac_seat_pass": {
+      "enter": { "target": "ac_seat_pass", "parent": "ac_front" },
+      "targets": {
+        "sp_heat3":     { "x": 350, "y": 640 },
+        "sp_heat2":     { "x": 450, "y": 640 },
+        "sp_heat1":     { "x": 545, "y": 640 },
+        "sp_off":       { "x": 640, "y": 640 },
+        "sp_cool1":     { "x": 735, "y": 640 },
+        "sp_cool2":     { "x": 830, "y": 640 },
+        "sp_cool3":     { "x": 930, "y": 640 }
+      }
+    },
+    
+    "ac_seat_driv": {
+      "enter": { "target": "ac_seat_driv", "parent": "ac_front" },
+      "targets": {
+        "sd_heat3":     { "x": 850, "y": 640 },
+        "sd_heat2":     { "x": 940, "y": 640 },
+        "sd_heat1":     { "x": 1040, "y": 640 },
+        "sd_off":       { "x": 1140 "y": 640 },
+        "sd_cool1":     { "x": 1240, "y": 640 },
+        "sd_cool2":     { "x": 1340, "y": 640 },
+        "sd_cool3":     { "x": 1450, "y": 640 }
+      }
+    },
+    
+    "ac_seat": {
+      "enter": { "target": "ac_seat", "parent": "ac_control", "parent_view": "seat" },
+      "targets": {
+        "sp_massage":     { "x": 580, "y": 490, "sets_view": "sp_mass_toggle" },
+        "sd_massage":     { "x": 1430, "y": 490, "sets_view": "sd_mass_toggle" }
+      },
+      "views": {
+        "sp_mass_toggle": {
+          "switch": "sp_massage",
+          "targets": {
+            "sp_mass_low":     { "x": 250, "y": 575 },
+            "sp_mass_high":    { "x": 510, "y": 575 }
+          }
+        },
+        "sd_mass_toggle": {
+          "switch": "sd_massage",
+          "targets": {
+            "sd_mass_low":     { "x": 1090, "y": 575 },
+            "sd_mass_high":    { "x": 1350, "y": 575 }
+          }
+        }
       }
     }
   }
