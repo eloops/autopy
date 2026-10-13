@@ -1,3 +1,55 @@
+__2026-10-14__: Updated macro.json and ui_map.json for Ora 03 MY23 (Australia) screen layouts and targets.
+
+Changes:
+
+* Final tweaks to timings
+  * settle_ms to `300`
+  * screen_load_ms to `800`
+  * delay_between_steps_ms to `300`
+  This is a good trade-off between speed and accuracy. After plenty of tests this is working well.
+* Added many new targets:
+  * `ac_control` - A/C control screen
+  * `bt_mobile` - Brings up the BT connection menu
+  * `ac_front_defrost` - activates the front windscreen defrost function from the `ac_control` screen
+  * `ac_rear_defrost` - activates the rear window defrost from the `ac_control` screen
+  * `ac_up` and `ac_down` - increases and decreases the AC fan speed.
+  * `ac_recycle` - switches between recycling air or fresh air
+  * `sd_cool1`, `sd_heat1` through `sd_cool3`, `sd_heat3` and `sd_off` for drivers seat heating/cooling
+  * `sp_cool1`, `sp_heat1` through `sp_cool3`, `sp_heat3` and `sp_off` for front passenger seat heating/cooling
+  * `sd_mass_low`, `sd_mass_high`, `sp_mass_low`, `sp_mass_high` for driver / front passenger massage function
+
+I've also tested various scenarios thoroughly.
+
+* "coldest" boot (when the car has been off for a long time - 1 hour or more)
+  * Macro does not start until system starts up > macro still runs
+* "black screen" on cold boot
+  * sometimes this happens, a black screen is shown on boot while waiting for the screen to initialise.
+  * Generally, the black screen does not last longer than 60 seconds > macro still runs
+* Reverse camera on
+  * Reverse camera is an overlay - the macro will run underneath (provided system has booted), cursor / movements not visible
+  * The 60s delay is generally enough time to perform reversing maneuvers and begin driving
+* Cold boot (when the car has been off for 10 mins or more)
+  * 60s delay solves this issue
+* Other menus have been activated before macro starts
+  * Initial zero move and home click provides a stable start to the macro
+* Warm boot (car off for less than 5 minutes)
+  * No solution for this scenario
+  * The macro only runs on initial boot of the system
+  * Warm boot means the system hasn't really turned off, so it doesn't run again
+  * Solution so far has been to remove and reinsert the USB cable connected to the rp2040.
+
+There's probably some more scenarios but this is working really well now.
+
+Existing targets from when this was updated:
+
+* `elk_toggle` Emergency Lane Keeping toggle
+* `dms_toggle` Driver Monitoring System toggle
+* `dms_confirm` Driver Monitoring System confirmation dialog
+* `eco_toggle` ECO+ Driving mode toggle
+* `single_pedal` Single Pedal mode toggle
+* `seat_pos_1` through `seat_pos_3` Seat memory position buttons
+* `carplay` Returns to Apple Carplay. Note this should be the last target in any macro if used.
+
 __2026-09-30__: Updated code.py and macro.json, now stops mouse acceleration from interfering and is now accurate.
 
 There's now a "mover" type which will just move the mouse cursor, but not click.
